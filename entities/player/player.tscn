@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://cw5o21jsumj46"]
 
 [ext_resource type="Script" uid="uid://dctki6rv5fd6f" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://cdg5gf7n3jbd2" path="res://icon.svg" id="2_abrql"]
+[ext_resource type="Resource" uid="uid://cm350257nr2ov" path="res://entities/player/components/def_player_stats.tres" id="2_sglur"]
 
-[node name="Player" type="Node2D" unique_id=2057767831]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkoe3"]
+
+[node name="Player" type="CharacterBody2D" unique_id=201047894]
 script = ExtResource("1_symyc")
+stats = ExtResource("2_sglur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1461971950]
+shape = SubResource("RectangleShape2D_dkoe3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1637189000]
+texture = ExtResource("2_abrql")
