@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dnpjedhxiulg2"]
+
+[ext_resource type="Texture2D" uid="uid://cdg5gf7n3jbd2" path="res://icon.svg" id="1_owq46"]
+[ext_resource type="Script" uid="uid://brvnrsvxvpwkq" path="res://entities/enemies/enemy.gd" id="1_wqcwe"]
+[ext_resource type="Resource" uid="uid://bgy15sxvwx1rp" path="res://entities/enemies/components/def_enemy_stats.tres" id="2_5lf1o"]
+[ext_resource type="Script" uid="uid://dx0ssnn50kqnl" path="res://components/hurt_box.gd" id="4_msovg"]
+[ext_resource type="Script" uid="uid://bidyqaptw8c3d" path="res://components/health_points.gd" id="4_twyc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkoe3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twyc1"]
+size = Vector2(128, 128)
+
+[node name="enemy" type="CharacterBody2D" unique_id=1571062750]
+script = ExtResource("1_wqcwe")
+stats = ExtResource("2_5lf1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=292763430]
+shape = SubResource("RectangleShape2D_dkoe3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844522074]
+modulate = Color(0.86023587, 0, 0.24419636, 1)
+texture = ExtResource("1_owq46")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=168985420]
+script = ExtResource("4_twyc1")
+
+[node name="HurtboxComponent" type="Area2D" parent="HealthComponent" unique_id=568989383]
+script = ExtResource("4_msovg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent/HurtboxComponent" unique_id=573841636]
+shape = SubResource("RectangleShape2D_twyc1")
