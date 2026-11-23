@@ -12,9 +12,7 @@ var dis = 0;
 func handle_input() -> void:
 	if not Input.is_anything_pressed():
 		return
-	mVec.y = int(Input.is_action_pressed("down"))-int(Input.is_action_pressed("up"));
-	mVec.x = int(Input.is_action_pressed("right"))-int(Input.is_action_pressed("left"));
-	print(mVec);
+	mVec = Input.get_vector("left","right","up","down");
 	if(mVec.y == 0 and mVec.x == 0):
 		return
 	dis = sqrt(mVec.x*mVec.x+mVec.y*mVec.y); # not predividing in case we ever need dis in the future
