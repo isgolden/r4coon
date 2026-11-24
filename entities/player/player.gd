@@ -10,6 +10,7 @@ var handleInp : input_handler = inputHandler.new();
 @onready var healthComp = $HealthComponent;
 
 func _ready():
+	add_to_group(GroupNames.PLAYER)
 	handleInp.pStats = stats;
 	healthComp.health = stats.maxHealth; # i think this is what you mean, better to depend on one stat block rather than share it right?
 
