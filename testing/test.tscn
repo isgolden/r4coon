@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkcegdnrsohy"]
+
+[ext_resource type="PackedScene" uid="uid://dnpjedhxiulg2" path="res://entities/enemies/enemy.tscn" id="1_d3m38"]
+[ext_resource type="Script" uid="uid://dqa20gpqir246" path="res://entities/enemies/components/behaviour/enemy_behaviour_runner.gd" id="2_erfnp"]
+[ext_resource type="PackedScene" uid="uid://cw5o21jsumj46" path="res://entities/player/player.tscn" id="3_0jdpv"]
+
+[sub_resource type="Resource" id="Resource_yx02h"]
+script = ExtResource("2_erfnp")
+metadata/_custom_type_script = "uid://dqa20gpqir246"
+
+[node name="Test" type="Node2D" unique_id=103177559]
+
+[node name="enemy" parent="." unique_id=1571062750 instance=ExtResource("1_d3m38")]
+behaviour = SubResource("Resource_yx02h")
+
+[node name="Player" parent="." unique_id=201047894 instance=ExtResource("3_0jdpv")]
